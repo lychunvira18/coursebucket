@@ -1,32 +1,66 @@
 <template>
   <v-card flat width="60%">
-    <v-text-field
-      label="Full name: "
-      class="mx-5"
-      prepend-icon="mdi-account-circle"
-      id="fullname"
-    />
-    <v-text-field
-      label="Username: "
-      class="mx-5"
-      prepend-icon="mdi-account"
-      id="username"
-    />
-    <v-text-field
-      label="Roll number: Ex. 1101801068"
-      class="mx-5"
-      prepend-icon="mdi-format-list-numbered"
-      id="username"
-    />
-    <v-text-field
-      label="Email: Ex. username@example.com"
-      class="mx-5"
-      prepend-icon="mdi-email"
-      id="email"
-    />
-    <v-btn class="info ml-12 mt-8" width="80%" to="/confirmation">Next</v-btn>
+    <v-form v-model="isValid">
+      <v-text-field
+        label="Full name: "
+        class="mx-lg-5 mx-md-5 "
+        prepend-icon="mdi-account-circle"
+        id="fullname"
+        :rules="textRules"
+      />
+      <v-text-field
+        label="Username: "
+        class="mx-lg-5 mx-md-5 "
+        prepend-icon="mdi-account"
+        id="username"
+        :rules="textRules"
+      />
+      <v-text-field
+        label="Roll number:"
+        class="mx-lg-5 mx-md-5 "
+        prepend-icon="mdi-format-list-numbered"
+        id="rollNumber"
+        :rules="numberRules"
+      />
+      <v-text-field
+        type="email"
+        label="Email:"
+        class="mx-lg-5 mx-md-5 "
+        prepend-icon="mdi-email"
+        id="email"
+        :rules="emailRules"
+      />
+      <v-btn
+        class="info ml-12 mt-8"
+        width="80%"
+        to="/login/LoginConfirm"
+        :disabled="!isValid"
+        >Next</v-btn
+      >
+    </v-form>
   </v-card>
 </template>
 <script>
-export default {};
+export default {
+  data: () => ({
+    isValid: true,
+    textRules: [
+      v => !!v || "Username is required!",
+      v => v.length >= 3 || "Minimuim length is 3 characters"
+    ],
+    numberRules: [
+      v => !!v || "Roll number is required!",
+      v => /\d/.test(v) || "Number only!",
+      v => v.length == 10 || "10 Digits is required!",
+      v =>
+        /^\(?([0-1]{4})\)?([3-9]{1})?([0-1]{3})?([0-9]{2})$/.test(v) ||
+        "Invalid!, Example: 1101801001 (Batch 6)"
+    ],
+    emailRules: [
+      v => !!v || "Email is required",
+      v =>
+        /.+@.+/.test(v) || "E-mail must be valid, Example: username@gmail.com"
+    ]
+  })
+};
 </script>
