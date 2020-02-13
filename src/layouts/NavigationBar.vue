@@ -2,14 +2,14 @@
   <v-card flat>
     <v-layout row>
       <v-app-bar class="blue darken-1 white--text" dense>
-        <v-btn text>
-          <v-icon color="white">mdi-menu</v-icon>
-        </v-btn>
+        <v-app-bar-nav-icon
+          @click.stop="drawer = !drawer"
+          class="white--text ml-2"
+        ></v-app-bar-nav-icon>
+        <v-toolbar-title class="mr-12">CourseBucket </v-toolbar-title>
 
-        <v-toolbar-title class="mr-12">Coursebucket. </v-toolbar-title>
-
-        <v-btn color="white" class="mx-6" outlined>
-          <v-icon left>mdi-apps</v-icon> Subjects</v-btn
+        <v-btn color="white" class="mx-6" icon>
+          <v-icon>mdi-apps</v-icon> Subjects</v-btn
         >
         <v-btn text color="white" class="mx-6">Popular</v-btn>
 
@@ -18,10 +18,10 @@
         <v-text-field
           label="Search"
           color="white"
-          class="mt-6"
-          append-icon="mdi-magnify"
-          solo
+          class="mt-7"
+          outlined
           dense
+          flat
         />
         <v-spacer></v-spacer>
 
@@ -42,12 +42,22 @@
         >
       </v-app-bar>
     </v-layout>
+    <v-navigation-drawer v-model="drawer" app temporary>
+      <NavDrawer />
+    </v-navigation-drawer>
   </v-card>
 </template>
 
 <script>
+import NavDrawer from "../layouts/NavDrawer";
 export default {
-  name: "navBar"
+  name: "navBar",
+  components: {
+    NavDrawer
+  },
+  data: () => ({
+    drawer: false
+  })
 };
 </script>
 
