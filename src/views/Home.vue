@@ -1,12 +1,19 @@
 <template>
-  <v-container class="my-2">
-      <h1>Kdor</h1>
-  </v-container>
+  <div>
+    <HomeImage />
+    <HomeWatchingCarousel />
+  </div>
 </template>
 
 <script>
-export default {
+import HomeImage from "../components/HomeComponents/HomeImage"
+import HomeWatchingCarousel from "../components/HomeComponents/HomeWatchingCarousel"
 
+export default {
+  name: "Home",
+  components: {
+    HomeImage, HomeWatchingCarousel
+  }
 }
 </script>
 
