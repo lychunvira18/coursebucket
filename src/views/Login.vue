@@ -16,14 +16,14 @@
         <v-tabs-items v-model="tab" class="mt-5">
           <v-tab-item>
             <v-layout justify-center>
-              <login />
+              <Login />>
             </v-layout>
           </v-tab-item>
 
           <!-- Register Form -->
           <v-tab-item>
             <v-layout justify-center>
-              <register />
+              <Register />
             </v-layout>
           </v-tab-item>
         </v-tabs-items>
@@ -33,15 +33,14 @@
 </template>
 
 <script>
-import register from "../components/Register";
-import login from "../components/Login";
+import Register from "../components/Login/Register";
+import Login from "../components/Login/Login";
 export default {
   data: () => ({
     tab: null
   }),
   components: {
-    login,
-    register
+    Login, Register
   }
 };
 </script>

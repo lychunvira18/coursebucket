@@ -6,10 +6,10 @@
           <v-icon color="white">mdi-menu</v-icon>
         </v-btn>
 
-        <v-toolbar-title class="mr-12">CourseBucket </v-toolbar-title>
+        <v-toolbar-title class="mr-12">Coursebucket. </v-toolbar-title>
 
-        <v-btn color="white" class="mx-6" icon>
-          <v-icon>mdi-apps</v-icon> Subjects</v-btn
+        <v-btn color="white" class="mx-6" outlined>
+          <v-icon left>mdi-apps</v-icon> Subjects</v-btn
         >
         <v-btn text color="white" class="mx-6">Popular</v-btn>
 
@@ -19,9 +19,9 @@
           label="Search"
           color="white"
           class="mt-6"
-          outlined
+          append-icon="mdi-magnify"
+          solo
           dense
-          flat
         />
         <v-spacer></v-spacer>
 
