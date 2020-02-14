@@ -7,7 +7,7 @@
             height= "200px"
         >
             <v-card-title class="white--text">{{ CourseTitle }}</v-card-title>
-            <v-card-subtitle class="white--text">{{ CourseAuthor }}</v-card-subtitle>
+            <v-card-subtitle class="white--text mb-4">{{ CourseAuthor }}</v-card-subtitle>
         </v-img>
     </v-card>
 </template>

@@ -1,4 +1,10 @@
 <template>
+<<<<<<< HEAD
+  <div>
+    <HomeImage />
+    <HomeWatchingCarousel />
+  </div>
+=======
   <v-card clas class="Content1" height="75%" width="100%">
     <v-row>
       <v-col lg="4" md="6" sm="12">
@@ -13,9 +19,22 @@
       </v-col>
     </v-row>
   </v-card>
+>>>>>>> 3dd50c047f4e21230ddbba965e33b06f5ea85671
 </template>
 <script>
+<<<<<<< HEAD
+import HomeImage from "../components/HomeComponents/HomeImage"
+import HomeWatchingCarousel from "../components/HomeComponents/HomeWatchingCarousel"
+
+export default {
+  name: "Home",
+  components: {
+    HomeImage, HomeWatchingCarousel
+  }
+}
+=======
 export default {};
+>>>>>>> 3dd50c047f4e21230ddbba965e33b06f5ea85671
 </script>
 <style>
 .Content1 {
