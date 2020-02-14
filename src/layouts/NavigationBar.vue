@@ -8,7 +8,7 @@
         ></v-app-bar-nav-icon>
         <v-toolbar-title class="mr-12">CourseBucket </v-toolbar-title>
 
-        <v-btn color="white" class="mx-6" icon>
+        <v-btn color="white" class="mx-6" text>
           <v-icon>mdi-apps</v-icon> Subjects</v-btn
         >
         <v-btn text color="white" class="mx-6">Popular</v-btn>
