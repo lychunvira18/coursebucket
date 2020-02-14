@@ -1,9 +1,9 @@
 <template>
   <v-card
-    class="blue darken-1 white--text text-center footer "
+    class="blue darken-1 white--text text-center footer pt-1"
     flat
     width="100%"
-    height="100%"
+    height="30px"
     >Powered by @353-Technology</v-card
   >
 </template>
