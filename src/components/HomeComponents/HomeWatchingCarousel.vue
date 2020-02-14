@@ -6,7 +6,7 @@
     <v-carousel height="200px" hide-delimiter-background hide-delimiters>
       <v-carousel-item>
         <v-row>
-          <v-col cols="3" v-for="n in 4" :key="n">
+          <v-col lg="3" md="4" sm="6" v-for="n in 4" :key="n">
             <Thumbnail
               CourseTitle="How to piss into the toilet"
               CourseAuthor="Hun Vikran"
@@ -17,7 +17,7 @@
       </v-carousel-item>
       <v-carousel-item>
         <v-row>
-          <v-col cols="3" v-for="n in 4" :key="n">
+          <v-col lg="3" md="4" sm="6" v-for="n in 4" :key="n">
             <Thumbnail
               CourseTitle="How to piss into the toilet"
               CourseAuthor="Hun Vikran"

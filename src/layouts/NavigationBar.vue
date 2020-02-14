@@ -11,15 +11,16 @@
         <v-btn color="white" class="mx-6" text>
           <v-icon>mdi-apps</v-icon> Subjects</v-btn
         >
-        <v-btn text color="white" class="mx-6">Popular</v-btn>
+        <v-btn text color="white" class="mx-6 Popular">Popular</v-btn>
 
-        <v-btn text color="white">trending</v-btn>
+        <v-btn text color="white" class="Trending">trending</v-btn>
         <v-spacer></v-spacer>
         <v-text-field
           label="Search"
           color="white"
-          class="mt-7"
+          class="mt-7 Search-Bar"
           outlined
+          white
           dense
           flat
         />
@@ -43,7 +44,11 @@
       </v-app-bar>
     </v-layout>
     <v-navigation-drawer v-model="drawer" app temporary>
-      <NavDrawer />
+      <NavDrawer
+        UserProfile="https://randomuser.me/api/portraits/men/81.jpg"
+        UserName="Username"
+        UserRank="@Newbie"
+      />
     </v-navigation-drawer>
   </v-card>
 </template>
@@ -60,5 +65,12 @@ export default {
   })
 };
 </script>
-
-<style></style>
+<style>
+@media only screen and (max-width: 1200px) {
+  .Trending,
+  .Search-Bar,
+  .Popular {
+    display: none;
+  }
+}
+</style>
