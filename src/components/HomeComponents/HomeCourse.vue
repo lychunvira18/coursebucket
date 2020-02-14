@@ -17,7 +17,7 @@
           <Thumbnails
             CourseTitle="How to make Love?"
             CourseAuthor="By - Ly Chunvira <3"
-            CourseThumbnail="https://i1.sndcdn.com/avatars-000026318548-fk33tm-t500x500.jpg"
+            CourseThumbnail="https://i1.sndcdn.com/avatars-000026318548-fk33tm-t500x500.jpg "
           />
         </v-col>
       </v-row>
