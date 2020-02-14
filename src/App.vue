@@ -1,31 +1,22 @@
 <template>
   <v-app>
-    <header>
-      <!-- Navigation Bar -->
-      <navBar v-if="$route.name != 'Login' && $route.name != 'LoginConfirm'" />
-    </header>
+    <!-- Navigation Bar -->
+    <navBar
+      v-if="$route.name != 'Login' && $route.name != 'LoginConfirmation'"
+    />
     <router-view></router-view>
-    <Topic />
-    <Course />
-    <footer>
-      <Footer />
-    </footer>
   </v-app>
 </template>
 
 <script>
 import navBar from "./layouts/NavigationBar";
-import Footer from "./layouts/Footer";
-import Topic from "./components/Subject/Topic";
-import Course from "./components/Subject/Course";
+// import login from "./views/loginForm";
 export default {
   name: "App",
 
   components: {
-    navBar,
-    Footer,
-    Topic,
-    Course
+    navBar
+    // login
   },
 
   data: () => ({})
