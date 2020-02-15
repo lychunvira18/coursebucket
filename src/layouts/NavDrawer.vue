@@ -22,6 +22,15 @@
         <v-list-item-title>{{ item.title }}</v-list-item-title>
       </v-list-item-content>
     </v-list-item>
+    <v-list-item v-for="item in SubItems" :key="item.title" link>
+      <v-list-item-icon class="ml-4">
+        <v-icon>{{ item.icon }}</v-icon>
+      </v-list-item-icon>
+
+      <v-list-item-content>
+        <v-list-item-title>{{ item.title }}</v-list-item-title>
+      </v-list-item-content>
+    </v-list-item>
   </v-list>
 </template>
 <script>
@@ -38,12 +47,10 @@ export default {
         { title: "Community", icon: "mdi-account-group " },
         { title: "Course", icon: "mdi-note-multiple" }
       ],
-      color: "primary",
-      colors: ["primary", "blue", "success", "red", "teal"],
-      right: true,
-      miniVariant: false,
-      expandOnHover: false,
-      background: false
+      SubItems: [
+        { title: "Trending", icon: " mdi-thumb-up" },
+        { title: "Popular", icon: "mdi-trending-up" }
+      ]
     };
   },
   computed: {
