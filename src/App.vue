@@ -1,9 +1,7 @@
 <template>
   <v-app>
     <!-- Navigation Bar -->
-    <navBar
-      v-if="$route.name != 'Login' && $route.name != 'LoginConfirmation'"
-    />
+    <navBar v-if="$route.name != 'Login' && $route.name != 'LoginConfirm'" />
     <router-view></router-view>
   </v-app>
 </template>

@@ -47,7 +47,8 @@ export default {
       v => /(?=.*[A-Z])/.test(v) || "Must have one uppercase character",
       v => /(?=.*\d)/.test(v) || "Must have one number"
     ]
-  })
+  }),
+  methods: {}
 };
 </script>
 <style scoped>

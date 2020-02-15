@@ -38,7 +38,7 @@
               <v-btn
                 class="info ml-lg-12 mt-3"
                 width="80%"
-                to="/"
+                @click="signUp()"
                 :disabled="!isValid"
                 >Register</v-btn
               >
@@ -51,11 +51,12 @@
 </template>
 
 <script>
+import AuthService from "../backend/AuthService";
 export default {
   data: () => ({
     isValid: true,
     password: 0,
-    cofirmPassword: 0,
+    confirmPassword: 0,
     showPassword1: false,
     showPassword2: false,
     passwordRules: [
@@ -65,6 +66,20 @@ export default {
       v => /(?=.*\d)/.test(v) || "Must have one number"
     ]
   }),
+  methods: {
+    test() {},
+    async signUp() {
+      if (this.password == this.confirmPassword) {
+        const response = await AuthService.signup({
+          ...this.$store.getters.authentication,
+          password: this.password
+        });
+        alert(response.message);
+        if (response.code == "200") window.location.replace("/login");
+      } else alert("Password and confirm password don't match");
+    }
+  },
+
   components: {}
 };
 </script>
