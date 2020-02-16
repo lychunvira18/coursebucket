@@ -47,12 +47,7 @@
   </v-card>
 </template>
 <script>
-import {
-  nameField,
-  usernameField,
-  emailField,
-  rollNumberField
-} from "../../store/types/authTypes";
+import { authentication } from "../../store/auth/types";
 export default {
   data: () => ({
     isValid: true,
@@ -80,11 +75,12 @@ export default {
   }),
   methods: {
     updateStore() {
-      this.$store.dispatch(nameField, this.name);
-      this.$store.dispatch(usernameField, this.username);
-      this.$store.dispatch(rollNumberField, this.rollNumber);
-      this.$store.dispatch(emailField, this.email);
-      alert(this.$store.state.authentication.name);
+      this.$store.dispatch(authentication, {
+        name: this.name,
+        username: this.username,
+        rollNumber: this.rollNumber,
+        email: this.email
+      });
     }
   }
 };

@@ -67,7 +67,6 @@ export default {
     ]
   }),
   methods: {
-    test() {},
     async signUp() {
       if (this.password == this.confirmPassword) {
         const response = await AuthService.signup({
