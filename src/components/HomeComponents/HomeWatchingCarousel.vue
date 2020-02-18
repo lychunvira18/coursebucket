@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <h1 class="headline mt-6 mb-2">
-      <b>What people are watching right now</b>
+      What people are watching right now
     </h1>
     <v-carousel height="200px" hide-delimiter-background hide-delimiters>
       <v-carousel-item>

@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <h1 class="headline my-6"><b>Popoular Course in #Python</b></h1>
+    <h1 class="headline my-6">Popular Course in <span class="font-weight-bold">#Python</span></h1>
     <v-row>
       <v-col lg="3" md="4" sm="6" v-for="n in 4" :key="n">
         <Thumbnails
@@ -10,13 +10,13 @@
         />
       </v-col>
     </v-row>
-    <h1 class="headline my-6"><b>Course you might like</b></h1>
+    <h1 class="headline my-6">Courses you might like</h1>
     <div v-for="n in 2" :key="n">
       <v-row>
         <v-col lg="3" md="4" sm="6" v-for="n in 4" :key="n">
           <Thumbnails
             CourseTitle="How to make Love?"
-            CourseAuthor="By - Ly Chunvira <3"
+            CourseAuthor="Ly Chunvira <3"
             CourseThumbnail="https://i1.sndcdn.com/avatars-000026318548-fk33tm-t500x500.jpg "
           />
         </v-col>

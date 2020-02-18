@@ -1,13 +1,13 @@
 <template>
-  <v-container class="text-center">
-    <h1 class="headline my-6"><b>Popular Topics</b></h1>
-    <v-sheet class="mx-auto" elevation="8" max-width="1200">
-      <v-slide-group class="pa-4 Slide-Group mx-auto  " multiple show-arrows>
+  <v-container>
+    <h1 class="headline my-6">Popular topics</h1>
+    <v-sheet class="mx-auto">
+      <v-slide-group class="mx-auto" multiple show-arrows>
         <v-slide-item v-for="n in 10" :key="n">
           <v-container class=" mb-2">
             <CardThumbNail
               CourseTitle="Python"
-              CourseDescription="programing Langauge"
+              CourseDescription="Programing Language"
             />
           </v-container>
         </v-slide-item>
@@ -26,7 +26,5 @@ export default {
 </script>
 
 <style>
-.Slide-Group {
-  width: 840px;
-}
+
 </style>

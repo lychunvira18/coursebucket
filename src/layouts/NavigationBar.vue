@@ -1,15 +1,15 @@
 <template>
   <v-card flat>
     <v-layout row>
-      <v-app-bar class="blue darken-1 white--text app" dense>
+      <v-app-bar class="blue darken-1 white--text app">
         <v-app-bar-nav-icon
           @click.stop="drawer = !drawer"
           class="white--text ml-2"
         ></v-app-bar-nav-icon>
-        <v-toolbar-title class="mr-12">CourseBucket </v-toolbar-title>
+        <v-toolbar-title class="mr-12">Coursebucket. </v-toolbar-title>
 
-        <v-btn color="white" class="mx-6 Subject" text>
-          <v-icon>mdi-apps</v-icon> Subjects</v-btn
+        <v-btn outlined color="white" dark class="mx-6 Subject" text>
+          <v-icon left>mdi-apps</v-icon> Subjects</v-btn
         >
         <v-btn text color="white" class="mx-6 Popular">Popular</v-btn>
 
@@ -20,7 +20,9 @@
           color="white"
           class="mt-7 Search-Bar"
           outlined
-          white
+          style="border-radius: 20px"
+          append-icon="mdi-magnify"
+          solo
           dense
           flat
         />
@@ -38,8 +40,8 @@
           <v-icon color="white">mdi-account-circle</v-icon>
         </v-btn>
 
-        <v-btn text color="white" class="mr-3  Sign-Out btn" dark>
-          <v-icon class="mx-2">mdi-logout-variant</v-icon>Sign out</v-btn
+        <v-btn text outlined class="  Sign-Out btn" dark>
+          <v-icon class="mx-2" left>mdi-logout-variant</v-icon>Sign out</v-btn
         >
       </v-app-bar>
     </v-layout>
