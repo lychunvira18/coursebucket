@@ -2,18 +2,28 @@
   <div>
     <HomeImage />
     <HomeWatchingCarousel />
+    <HomeTopic />
+    <HomeCourse />
+    <Footer />
   </div>
 </template>
 <script>
-import HomeImage from "../components/HomeComponents/HomeImage"
-import HomeWatchingCarousel from "../components/HomeComponents/HomeWatchingCarousel"
+import HomeImage from "../components/HomeComponents/HomeImage";
+import HomeWatchingCarousel from "../components/HomeComponents/HomeWatchingCarousel";
+import HomeTopic from "../components/HomeComponents/HomeTopicSlide";
+import HomeCourse from "../components/HomeComponents/HomeCourse";
+import Footer from "../layouts/Footer";
 
 export default {
   name: "Home",
   components: {
-    HomeImage, HomeWatchingCarousel
+    HomeImage,
+    HomeWatchingCarousel,
+    HomeTopic,
+    HomeCourse,
+    Footer
   }
-}
+};
 </script>
 <style>
 .Content1 {
