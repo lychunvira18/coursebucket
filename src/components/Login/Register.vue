@@ -7,6 +7,7 @@
         prepend-icon="mdi-account-circle"
         id="fullname"
         :rules="textRules"
+        v-model="name"
       />
       <v-text-field
         label="Username: "
@@ -14,6 +15,7 @@
         prepend-icon="mdi-account"
         id="username"
         :rules="textRules"
+        v-model="username"
       />
       <v-text-field
         label="Roll number:"
@@ -21,6 +23,7 @@
         prepend-icon="mdi-format-list-numbered"
         id="rollNumber"
         :rules="numberRules"
+        v-model="rollNumber"
       />
       <v-text-field
         type="email"
@@ -29,18 +32,22 @@
         prepend-icon="mdi-email"
         id="email"
         :rules="emailRules"
+        v-model="email"
       />
-      <v-btn
-        class="info ml-12 mt-8"
-        width="80%"
-        to="/login/LoginConfirm"
-        :disabled="!isValid"
-        >Next</v-btn
-      >
+      <router-link to="/login/LoginConfirm">
+        <v-btn
+          class="info ml-12 mt-8"
+          width="80%"
+          @click="updateStore()"
+          :disabled="!isValid"
+          >Next</v-btn
+        >
+      </router-link>
     </v-form>
   </v-card>
 </template>
 <script>
+import { authentication } from "../../store/auth/types";
 export default {
   data: () => ({
     isValid: true,
@@ -60,7 +67,21 @@ export default {
       v => !!v || "Email is required",
       v =>
         /.+@.+/.test(v) || "E-mail must be valid, Example: username@gmail.com"
-    ]
-  })
+    ],
+    name: "",
+    username: "",
+    rollNumber: "",
+    email: ""
+  }),
+  methods: {
+    updateStore() {
+      this.$store.dispatch(authentication, {
+        name: this.name,
+        username: this.username,
+        rollNumber: this.rollNumber,
+        email: this.email
+      });
+    }
+  }
 };
 </script>

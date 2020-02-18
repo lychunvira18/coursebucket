@@ -1,8 +1,8 @@
 <template>
   <v-container class="text-center">
     <h1 class="headline my-6"><b>Popular Topics</b></h1>
-    <v-sheet class="mx-auto" elevation="8" max-width="800">
-      <v-slide-group class="pa-4" multiple show-arrows>
+    <v-sheet class="mx-auto" elevation="8" max-width="1200">
+      <v-slide-group class="pa-4 Slide-Group mx-auto  " multiple show-arrows>
         <v-slide-item v-for="n in 10" :key="n">
           <v-container class=" mb-2">
             <CardThumbNail
@@ -25,4 +25,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.Slide-Group {
+  width: 840px;
+}
+</style>

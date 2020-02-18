@@ -1,19 +1,19 @@
 <template>
   <v-card flat>
     <v-layout row>
-      <v-app-bar class="blue darken-1 white--text" dense>
+      <v-app-bar class="blue darken-1 white--text app" dense>
         <v-app-bar-nav-icon
           @click.stop="drawer = !drawer"
           class="white--text ml-2"
         ></v-app-bar-nav-icon>
         <v-toolbar-title class="mr-12">CourseBucket </v-toolbar-title>
 
-        <v-btn color="white" class="mx-6" text>
+        <v-btn color="white" class="mx-6 Subject" text>
           <v-icon>mdi-apps</v-icon> Subjects</v-btn
         >
         <v-btn text color="white" class="mx-6 Popular">Popular</v-btn>
 
-        <v-btn text color="white" class="Trending">trending</v-btn>
+        <v-btn text color="white" class="Trending">Trending</v-btn>
         <v-spacer></v-spacer>
         <v-text-field
           label="Search"
@@ -38,7 +38,7 @@
           <v-icon color="white">mdi-account-circle</v-icon>
         </v-btn>
 
-        <v-btn text color="white" class="mr-3" dark>
+        <v-btn text color="white" class="mr-3  Sign-Out btn" dark>
           <v-icon class="mx-2">mdi-logout-variant</v-icon>Sign out</v-btn
         >
       </v-app-bar>
@@ -65,11 +65,17 @@ export default {
   })
 };
 </script>
-<style>
+<style scoped>
 @media only screen and (max-width: 1200px) {
   .Trending,
-  .Search-Bar,
-  .Popular {
+  .Popular,
+  .Search-Bar {
+    display: none;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .Subject,
+  .Sign-Out {
     display: none;
   }
 }

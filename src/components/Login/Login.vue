@@ -25,16 +25,19 @@
       <v-checkbox label="Remember me!" class="ml-lg-12 ml-md-12" />
       <v-btn
         class="LoginBtn info ml-lg-12 mt-3 ml-md-12"
-        to="/"
         :disabled="!isValid"
+        @click="signin()"
         >Login</v-btn
       >
     </v-form>
   </v-card>
 </template>
 <script>
+import AuthService from "../../backend/AuthService";
 export default {
   data: () => ({
+    username: "",
+    password: "",
     showPassword: false,
     isValid: true,
     textRules: [
@@ -47,7 +50,19 @@ export default {
       v => /(?=.*[A-Z])/.test(v) || "Must have one uppercase character",
       v => /(?=.*\d)/.test(v) || "Must have one number"
     ]
-  })
+  }),
+  methods: {
+    async signin() {
+      const response = await AuthService.signin({
+        username: this.username,
+        password: this.password
+      });
+      if (response.code == "200") {
+        alert(response.msg);
+        window.location.replace("/");
+      } else alert(response.msg);
+    }
+  }
 };
 </script>
 <style scoped>
