@@ -1,84 +1,56 @@
 <template>
-  <v-container>
-    <v-row justify="space-around">
-      <v-col cols="12">
-        <v-select v-model="color" :items="colors" label="Color"></v-select>
-      </v-col>
+  <v-list dense nav class="py-0">
+    <v-list-item two-line :class="miniVariant && 'px-0'">
+      <v-list-item-avatar>
+        <img :src="UserProfile" />
+      </v-list-item-avatar>
 
-      <v-switch v-model="drawer" class="ma-2" label="v-model"></v-switch>
+      <v-list-item-content>
+        <v-list-item-title>{{ UserName }}</v-list-item-title>
+        <v-list-item-subtitle>{{ UserRank }}</v-list-item-subtitle>
+      </v-list-item-content>
+    </v-list-item>
 
-      <v-switch
-        v-model="miniVariant"
-        class="ma-2"
-        label="Mini variant"
-      ></v-switch>
+    <v-divider></v-divider>
 
-      <v-switch
-        v-model="expandOnHover"
-        class="ma-2"
-        label="Expand on hover"
-      ></v-switch>
+    <v-list-item v-for="item in items" :key="item.title" link>
+      <v-list-item-icon>
+        <v-icon>{{ item.icon }}</v-icon>
+      </v-list-item-icon>
 
-      <v-switch v-model="background" class="ma-2" label="Background"></v-switch>
+      <v-list-item-content>
+        <v-list-item-title>{{ item.title }}</v-list-item-title>
+      </v-list-item-content>
+    </v-list-item>
+    <v-list-item v-for="item in SubItems" :key="item.title" link>
+      <v-list-item-icon class="ml-4">
+        <v-icon>{{ item.icon }}</v-icon>
+      </v-list-item-icon>
 
-      <v-switch v-model="right" class="ma-2" label="Right"></v-switch>
-    </v-row>
-
-    <v-card height="400" class="overflow-hidden">
-      <v-navigation-drawer
-        v-model="drawer"
-        :color="color"
-        :expand-on-hover="expandOnHover"
-        :mini-variant="miniVariant"
-        :right="right"
-        :src="bg"
-        absolute
-        dark
-      >
-        <v-list dense nav class="py-0">
-          <v-list-item two-line :class="miniVariant && 'px-0'">
-            <v-list-item-avatar>
-              <img src="https://randomuser.me/api/portraits/men/81.jpg" />
-            </v-list-item-avatar>
-
-            <v-list-item-content>
-              <v-list-item-title>Application</v-list-item-title>
-              <v-list-item-subtitle>Subtext</v-list-item-subtitle>
-            </v-list-item-content>
-          </v-list-item>
-
-          <v-divider></v-divider>
-
-          <v-list-item v-for="item in items" :key="item.title" link>
-            <v-list-item-icon>
-              <v-icon>{{ item.icon }}</v-icon>
-            </v-list-item-icon>
-
-            <v-list-item-content>
-              <v-list-item-title>{{ item.title }}</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-        </v-list>
-      </v-navigation-drawer>
-    </v-card>
-  </v-container>
+      <v-list-item-content>
+        <v-list-item-title>{{ item.title }}</v-list-item-title>
+      </v-list-item-content>
+    </v-list-item>
+  </v-list>
 </template>
 <script>
 export default {
+  props: {
+    UserName: String,
+    UserRank: String,
+    UserProfile: String
+  },
   data() {
     return {
       drawer: true,
       items: [
-        { title: "Dashboard", icon: "mdi-view-dashboard" },
-        { title: "Photos", icon: "mdi-image" },
-        { title: "About", icon: "mdi-help-box" }
+        { title: "Community", icon: "mdi-account-group " },
+        { title: "Course", icon: "mdi-note-multiple" }
       ],
-      color: "primary",
-      colors: ["primary", "blue", "success", "red", "teal"],
-      right: true,
-      miniVariant: false,
-      expandOnHover: false,
-      background: false
+      SubItems: [
+        { title: "Trending", icon: " mdi-thumb-up" },
+        { title: "Popular", icon: "mdi-trending-up" }
+      ]
     };
   },
   computed: {

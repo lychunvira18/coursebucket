@@ -16,7 +16,7 @@
         <v-tabs-items v-model="tab" class="mt-5">
           <v-tab-item>
             <v-layout justify-center>
-              <Login />>
+              <Login />
             </v-layout>
           </v-tab-item>
 
@@ -40,7 +40,8 @@ export default {
     tab: null
   }),
   components: {
-    Login, Register
+    Login,
+    Register
   }
 };
 </script>
@@ -52,5 +53,7 @@ export default {
 .loginCard {
   position: absolute;
   top: 17.5%;
+}
+@media only screen and (max-width: 900px) {
 }
 </style>
